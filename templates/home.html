@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guest Book</title>
+	</head>
+	<body>
+
+		<form method="post">
+			<table>
+				<tr>
+					<td>
+						Name:
+					</td>
+					<td>
+						<input type="text" name="name" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Message:
+					</td>
+					<td>
+						<textarea name="message"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		<br>
+		<hr>
+		<br>
+
+		{% if messages %}
+
+			{% for message in messages %}
+
+				<p>{{message.name}} - {{message.message}}</p>
+				<br>
+				<br>
+
+			{% endfor %}
+
+		{% else %}
+
+			<p>No existing guest book messages</p>
+
+		{% endif %}
+
+	</body>
+
+</html>
