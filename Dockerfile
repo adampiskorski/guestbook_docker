@@ -11,4 +11,4 @@ WORKDIR /guestbook
 RUN pip install -r requirements.txt
 
 # Run the flask app
-CMD ["python","app.py"]
+CMD gunicorn -b 0.0.0.0:8000 app:app
